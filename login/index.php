@@ -3,9 +3,10 @@
     require_once(dirname(__FILE__) . '/functions.php');
     require_once(dirname(__FILE__) . '/constants.php');
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         require_once(dirname(__FILE__) . '/controlErrors.php');
+
     }
 
 ?>
@@ -39,7 +40,7 @@
             <input type="hidden" name="passwordBtoa">
             <div class="row">
                 <label for="email">El teu correu electrònic</label>
-                <input type="email" id="email" name="email" placeholder="El teu correu electrònic" autocomplete="current-email" required autofocus>
+                <input type="email" id="email" name="email" placeholder="El teu correu electrònic" autocomplete="current-email" value = "<?php if(!empty($_COOKIE['email'])) echo $_COOKIE['email']; ?>" required autofocus>
                 <?php if (!empty($errors) && array_key_exists('email', $errors)) echo "<p class='errors'>{$errors['email']}</p>"; ?>
             </div>
             <div class="row">
