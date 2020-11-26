@@ -14,8 +14,11 @@
         return 1; // ERROR
     } else {
 
-        $email = base64_decode($_POST['emailBtoa']);
-        $password = base64_decode($_POST['passwordBtoa']);
+        $email = filter_input(INPUT_POST, 'emailBtoa');
+        $password = filter_input(INPUT_POST, 'passwordBtoa');
+
+        $email = base64_decode($email);
+        $password = base64_decode($password);
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
