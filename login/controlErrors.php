@@ -36,9 +36,13 @@
 
                 if ($value['email'] === $email && password_verify($password, $value['password'])) {
 
+                    session_start();
+                    $_SESSION['email'] = $email;
                     setcookie("email", $email, time()+3600*24*7);
+
                     header("location: http://www.educem.com");
-                    exit();
+                    // header("location: ./home.php");
+                    exit;
                 }
             }
 

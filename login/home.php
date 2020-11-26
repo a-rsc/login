@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION['usuari'])) {
+    if (!isset($_SESSION['email'])) {
         header("location: ./index.php");
     }
 ?>
@@ -19,8 +19,8 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <?php echo "Benvingut " . $_SESSION['usuari']; ?>
-        <br><a href="sessioPrincipal.php">Logout</a>
+        <?php echo "Benvingut " . $_SESSION['email']; ?>
+        <br><a href="logout.php">Logout</a>
 
         <script src="" async defer></script>
     </body>
