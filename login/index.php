@@ -3,7 +3,6 @@
     // Donat que HTTP és un protocol sense estat, per poder vincular les diferents peticions d'un mateix client entr si, cal associar-les mitjançant el que es coneix com a sessions.
     // session_start();
 
-    require_once(dirname(__FILE__) . '/functions.php');
     require_once(dirname(__FILE__) . '/constants.php');
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -37,7 +36,11 @@
         <![endif]-->
 
         <h1>Login · Harcoded</h1>
-
+        <?php
+            if (!empty($errors)) {
+                echo '<script>alert("Usuari no autenticat!");</script>';
+            }
+        ?>
         <form id="login" method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <input type="hidden" name="emailBtoa">
             <input type="hidden" name="passwordBtoa">

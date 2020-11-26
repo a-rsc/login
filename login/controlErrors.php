@@ -14,8 +14,8 @@
         return 1; // ERROR
     } else {
 
-        $email = filter_input(INPUT_POST, base64_decode($_POST['emailBtoa']));
-        $password = filter_input(INPUT_POST, base64_decode($_POST['passwordBtoa']));
+        $email = base64_decode($_POST['emailBtoa']);
+        $password = base64_decode($_POST['passwordBtoa']);
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
@@ -38,7 +38,7 @@
 
                     setcookie("email", $email, time()+3600*24*7);
                     header("location: http://www.educem.com");
-                    exit;
+                    exit();
                 }
             }
 
