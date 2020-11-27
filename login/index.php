@@ -1,7 +1,10 @@
 <?php
 
     // Donat que HTTP és un protocol sense estat, per poder vincular les diferents peticions d'un mateix client entr si, cal associar-les mitjançant el que es coneix com a sessions.
-    // session_start();
+    // if (!empty($_COOKIE['PHPSESSID'])) {
+    //     session_start();
+    //     header("location: ./home.php");
+    // }
 
     require_once(dirname(__FILE__) . '/constants.php');
 

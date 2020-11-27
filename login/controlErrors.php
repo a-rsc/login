@@ -43,8 +43,8 @@
                     $_SESSION['email'] = $email;
                     setcookie("email", $email, time()+3600*24*7);
 
-                    header("location: http://www.educem.com");
-                    // header("location: ./home.php");
+                    // header("location: http://www.educem.com");
+                    header("location: ./home.php");
                     exit;
                 }
             }
